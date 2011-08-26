@@ -4,11 +4,12 @@ import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.SimpleCursorAdapter;
-
-import java.sql.SQLException;
 
 /**
  * Main activity class for the android application.
@@ -22,6 +23,7 @@ public class List extends ListActivity {
 
     private static final int ADD_ID = Menu.FIRST;
     private static final int NONE = 0;
+    private static final int DELETE_ID = ADD_ID + 1;
     private Cursor dataCursor;
     private ListDbAdapter databaseAdapter;
 
@@ -29,7 +31,7 @@ public class List extends ListActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate( Bundle savedInstanceState ) {
-        Log.i("List", "onCreate" );
+        Log.i( "List", "onCreate" );
         super.onCreate( savedInstanceState );
         setContentView( R.layout.main );
         databaseAdapter = new ListDbAdapter( this );
@@ -39,7 +41,7 @@ public class List extends ListActivity {
     }
 
     private void getData() {
-        Log.i( "List", "Getting data from the database");
+        Log.i( "List", "Getting data from the database" );
         dataCursor = databaseAdapter.fetchAllItemsFromPersistentStore();
         startManagingCursor( dataCursor );
         String[] cols = new String[]{ ListDbAdapter.DB_ITEM };
@@ -49,8 +51,14 @@ public class List extends ListActivity {
     }
 
     @Override
+    public void onCreateContextMenu( ContextMenu aMenu, View aView, ContextMenu.ContextMenuInfo aContextMenuInfo ) {
+        super.onCreateContextMenu( aMenu, aView, aContextMenuInfo );
+        aMenu.add( 0, DELETE_ID, 0, R.string.menu_delete );
+    }
+
+    @Override
     public boolean onCreateOptionsMenu( Menu aMenu ) {
-        Log.i("List", "Creating options menu" );
+        Log.i( "List", "Creating options menu" );
         super.onCreateOptionsMenu( aMenu );
         aMenu.add( NONE, ADD_ID, NONE, R.string.menu_add );
         return true;
@@ -66,8 +74,16 @@ public class List extends ListActivity {
         return super.onMenuItemSelected( aId, aMenuItem );
     }
 
+    public boolean onContextItemSelected( MenuItem aMenuItem ) {
+        AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) aMenuItem.getMenuInfo();
+        Log.i( "List", "ID: " + info.id );
+        databaseAdapter.deleteItem( info.id );
+        getData();
+        return true;
+    }
+
     private void createItem() {
-        Log.i("List", "Creating item" );
+        Log.i( "List", "Creating item" );
         // need to get data into this
         databaseAdapter.createItemForString( getString( R.string.new_item ) );
         getData();

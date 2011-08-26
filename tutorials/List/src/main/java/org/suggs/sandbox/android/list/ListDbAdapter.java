@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.sql.SQLException;
-
 
 /**
  * Adapter to the database for the list class.
@@ -40,22 +38,27 @@ public final class ListDbAdapter {
     }
 
     public ListDbAdapter open() {
-        Log.i( "List", "Opening the database");
+        Log.i( "List", "Opening the database" );
         dbHelper = new ListDbHelper( listContext );
         database = dbHelper.getWritableDatabase();
         return this;
     }
 
     public Cursor fetchAllItemsFromPersistentStore() {
-        Log.i( "List", "Fetching all items");
+        Log.i( "List", "Fetching all items" );
         return database.query( DB_TABLE, new String[]{ DB_ID, DB_ITEM }, null, null, null, null, null );
     }
 
     public long createItemForString( String aItem ) {
-        Log.i( "List", "Creating items");
+        Log.i( "List", "Creating items" );
         ContentValues content = new ContentValues();
         content.put( DB_ITEM, aItem );
         return database.insert( DB_TABLE, null, content );
+    }
+
+    public boolean deleteItem( long aRowId ) {
+        Log.i( "List", "Deleting ID [" + aRowId + "]" );
+        return database.delete( DB_TABLE, DB_ID + "=" + aRowId, null ) > 0;
     }
 
     /** Helper class to interact with the database for creates and drops etc. */
@@ -67,7 +70,7 @@ public final class ListDbAdapter {
 
         @Override
         public void onCreate( SQLiteDatabase aDatabase ) {
-            Log.i( "List", "Creating a new database");
+            Log.i( "List", "Creating a new database" );
             aDatabase.execSQL( DB_CREATE );
         }
 
