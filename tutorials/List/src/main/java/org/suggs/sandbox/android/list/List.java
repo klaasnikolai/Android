@@ -1,6 +1,7 @@
 package org.suggs.sandbox.android.list;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class List extends ListActivity {
     private static final int DELETE_ID = ADD_ID + 1;
     private Cursor dataCursor;
     private ListDbAdapter databaseAdapter;
+    private static final int ITEM_ADD = 0;
 
 
     /** Called when the activity is first created. */
@@ -74,19 +76,37 @@ public class List extends ListActivity {
         return super.onMenuItemSelected( aId, aMenuItem );
     }
 
+
     public boolean onContextItemSelected( MenuItem aMenuItem ) {
-        AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) aMenuItem.getMenuInfo();
-        Log.i( "List", "ID: " + info.id );
-        databaseAdapter.deleteItem( info.id );
-        getData();
-        return true;
+        switch ( aMenuItem.getItemId() ) {
+            case DELETE_ID:
+                AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) aMenuItem.getMenuInfo();
+                databaseAdapter.deleteItem( info.id );
+                getData();
+                return true;
+        }
+        return super.onContextItemSelected( aMenuItem );
     }
 
     private void createItem() {
-        Log.i( "List", "Creating item" );
-        // need to get data into this
-        databaseAdapter.createItemForString( getString( R.string.new_item ) );
-        getData();
+        Intent intent = new Intent( this, ListAdd.class );
+        startActivityForResult( intent, ITEM_ADD );
+    }
+
+    @Override
+    protected void onActivityResult( int aRequestCode, int aResultCode, Intent aIntent ) {
+        super.onActivityResult( aRequestCode, aResultCode, aIntent );
+        if ( aResultCode == RESULT_CANCELED ) {
+            return;
+        }
+        Bundle extras = aIntent.getExtras();
+        switch ( aRequestCode ) {
+            case ITEM_ADD:
+                String label = extras.getString( ListDbAdapter.DB_ITEM );
+                databaseAdapter.createItemForString( label );
+                getData();
+                break;
+        }
     }
 
 

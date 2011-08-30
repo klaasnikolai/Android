@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">List</string>
     <string name="menu_add">Add item</string>
-    <string name="new_item">New item</string>
     <string name="empty_list">No items in this list</string>
     <string name="menu_delete">Delete Item</string>
+    <string name="add_button_text">Add</string>
 </resources>
