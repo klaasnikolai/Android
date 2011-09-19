@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Hello World, CountdownActivity"
-    />
-</LinearLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <TextView
+            android:id="@+id/countdownDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="50px"
+            android:text=""
+            />
+
+    <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter seconds here:"
+            android:layout_below="@id/countdownDisplay"
+            />
+
+    <EditText
+            android:id="@+id/timeEntryBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:layout_below="@id/label"
+            />
+
+    <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeEntryBox"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dip"
+            android:text="Start"
+            />
+
+
+</RelativeLayout>
 
