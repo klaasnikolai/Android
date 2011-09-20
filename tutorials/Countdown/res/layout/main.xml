@@ -9,35 +9,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="50px"
-            android:text=""
+            android:text="@string/countdown_initial"
             />
 
-    <TextView
-            android:id="@+id/label"
+    <Button
+            android:id="@+id/pickButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter seconds here:"
             android:layout_below="@id/countdownDisplay"
-            />
-
-    <EditText
-            android:id="@+id/timeEntryBox"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
-            android:layout_below="@id/label"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dip"
+            android:text="@string/pick_time_text"
             />
 
     <Button
             android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/timeEntryBox"
+            android:layout_below="@id/pickButton"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="10dip"
-            android:text="Start"
+            android:text="@string/start_text"
             />
 
+    <Button
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pickButton"
+            android:layout_toLeftOf="@id/startButton"
+            android:layout_marginLeft="10dip"
+            android:text="@string/stop_text"
+            />
 
 </RelativeLayout>
 
