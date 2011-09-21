@@ -16,8 +16,9 @@
     <name>Android Tutorials Parent</name>
 
     <modules>
-        <module>List</module>
-        <module>Countdown</module>
+        <module>list</module>
+        <module>countdown</module>
+        <module>spiritlevel</module>
     </modules>
 
 

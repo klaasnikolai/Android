@@ -114,8 +114,8 @@ public class CountdownActivity extends Activity {
                     Log.i( getString( R.string.app_name ), "Using default ringtone");
                     ringtone = ringToneManager.getRingtone( context, Settings.System.DEFAULT_RINGTONE_URI );
                 }
-                //Log.i( getString( R.string.app_name ), "Playing ringtone [" + ringtone.getTitle( context ) + "]" );
-                //ringtone.play();
+                Log.i( getString( R.string.app_name ), "Playing ringtone [" + ringtone.getTitle( context ) + "]" );
+                ringtone.play();
             }
         }.start();
 
