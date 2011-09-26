@@ -23,8 +23,6 @@ public class SpiritLevelDrawableView extends View {
     private ShapeDrawable bubble;
     private Resources resources;
 
-    private static final String TAG = "SpiritLevelDrawableView";
-
     private static final double WIDTH_MAGNIFY = 1.5;
     private static final double HEIGHT_MAGNIFY = 3;
 
