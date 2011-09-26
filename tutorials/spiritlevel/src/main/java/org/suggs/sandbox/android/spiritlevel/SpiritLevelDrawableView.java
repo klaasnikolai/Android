@@ -12,6 +12,7 @@ import android.hardware.SensorManager;
 import android.view.View;
 
 /**
+ * Class to manage the core visual aspects of the process.
  * <p/>
  * User: suggitpe Date: 22/09/11 Time: 07:17
  */

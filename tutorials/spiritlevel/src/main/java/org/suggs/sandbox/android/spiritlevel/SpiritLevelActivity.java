@@ -8,6 +8,11 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 
+/**
+ * Main activity class.
+ * <p/>
+ * User: suggitpe Date: 22/09/11 Time: 07:17
+ */
 public class SpiritLevelActivity extends Activity implements SensorEventListener {
 
     private static final String TAG = "SpiritLevelActivity";
