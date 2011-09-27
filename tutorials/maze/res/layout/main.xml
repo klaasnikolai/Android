@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Hello World, MazeActivity"
-    />
-</LinearLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:maze="http://schemas.android.com/apk/res/org.suggs.sandbox.android.maze"
+             android:orientation="vertical"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+    <org.suggs.sandbox.android.maze.MazeView
+            id="@+id/maze"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            maze:cellWidth="50px"
+            maze:pixelWidth="300px"
+            maze:pixelHeight="400px"
+            maze:ballDiameter="39px"/>
+
+</FrameLayout>
 

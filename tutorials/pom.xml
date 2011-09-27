@@ -19,6 +19,7 @@
         <module>list</module>
         <module>countdown</module>
         <module>spiritlevel</module>
+        <module>maze</module>
     </modules>
 
 
