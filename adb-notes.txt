@@ -1,0 +1,5 @@
+Debug from a phone:
+ - adb shell logcat | tee out.log
+
+Install an application to a phone:
+ - adb -d install -r target/app.apk
