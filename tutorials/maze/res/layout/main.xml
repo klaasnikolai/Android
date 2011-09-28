@@ -9,10 +9,18 @@
             id="@+id/maze"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            maze:cellWidth="50px"
-            maze:pixelWidth="300px"
-            maze:pixelHeight="400px"
-            maze:ballDiameter="39px"/>
+            maze:cellWidth="@dimen/cellWidth"
+            maze:pixelWidth="@dimen/pixelWidth"
+            maze:pixelHeight="@dimen/pixelHeight"
+            maze:ballDiameter="@dimen/ballDiameter"/>
+
+    <org.suggs.sandbox.android.maze.MazeBall
+        id="@+id/mazeball"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        maze:cellWidth="@dimen/cellWidth"
+        maze:ballDiameter="@dimen/ballDiameter"/>
+
 
 </FrameLayout>
 

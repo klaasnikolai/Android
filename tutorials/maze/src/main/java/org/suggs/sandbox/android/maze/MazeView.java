@@ -56,7 +56,6 @@ public class MazeView extends View {
     }
 
     private void generate( int x, int y ) {
-
         visited[x][y] = true;
         while ( !visited[x][y + 1] || !visited[x + 1][y] || !visited[x][y - 1] || !visited[x - 1][y] ) {
             while ( true ) {
@@ -124,5 +123,45 @@ public class MazeView extends View {
 
         width = pixelWidth / ( int ) cellWidth;
         height = pixelHeight / ( int ) cellWidth;
+    }
+
+    public boolean isWall( int oldX, int oldY, int newX, int newY ) {
+        boolean wallPresent;
+
+        if ( ( oldX == newX ) && ( oldY == newY ) ) {
+            wallPresent = false;
+        }
+        else if ( newX == oldX - 1 ) {
+            wallPresent = west[oldX][oldY];
+        }
+        else if ( newX == oldX + 1 ) {
+            wallPresent = east[oldX][oldY];
+        }
+        else if ( newY == oldY - 1 ) {
+            wallPresent = north[oldX][oldY];
+        }
+        else if ( newY == oldY + 1 ) {
+            wallPresent = south[oldX][oldY];
+        }
+        else {
+            wallPresent = false;
+        }
+
+        if ( ( oldX != newX ) && ( oldY != newY ) ) {
+            if ( ( newX == oldX + 1 ) && ( newY == oldY + 1 ) && ( north[newX][newY] || west[newX][newY] ) ) {
+                wallPresent = true;
+            }
+            else if ( ( newX == oldX + 1 ) && ( newY == oldY - 1 ) && ( south[newX][newY] || west[newX][newY] ) ) {
+                wallPresent = true;
+            }
+            else if ( ( newX == oldX - 1 ) && ( newY == oldY + 1 ) && ( north[newX][newY] || east[newX][newY] ) ) {
+                wallPresent = true;
+            }
+            else if ( ( newX == oldX - 1 ) && ( newY == oldY - 1 ) && ( south[newX][newY] || east[newX][newY] ) ) {
+                wallPresent = true;
+            }
+        }
+
+        return wallPresent;
     }
 }
