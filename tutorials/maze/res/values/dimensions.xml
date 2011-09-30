@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="cellWidth">50px</dimen>
-    <dimen name="pixelWidth">300px</dimen>
-    <dimen name="pixelHeight">400px</dimen>
-    <dimen name="ballDiameter">39px</dimen>
+    <dimen name="cellWidth">50dp</dimen>
+    <dimen name="pixelWidth">300dp</dimen>
+    <dimen name="pixelHeight">400dp</dimen>
+    <dimen name="ballDiam">39dp</dimen>
 </resources>
 

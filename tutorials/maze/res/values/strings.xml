@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Tilting Maze</string>
+    <string name="menu_restart">Restart this game</string>
+    <string name="menu_newgame">Start new game</string>
 </resources>

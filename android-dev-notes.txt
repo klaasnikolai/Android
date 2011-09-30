@@ -3,3 +3,9 @@ Debug from a phone:
 
 Install an application to a phone:
  - adb -d install -r target/app.apk
+
+Create a new project at cmd line:
+android create project --target android-10 --name spiritlevel --path ~/android/spiritlevel --activity SpiritLevelActivity --package com.example.spiritlevel
+
+
+android create project --target android-8 --name Personal Kanban --path ~/git-snapshots/android/personalkanban --activity PersonalKanbanActivity --package org.suggs.android.personalkanban
