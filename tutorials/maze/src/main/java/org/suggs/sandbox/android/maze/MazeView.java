@@ -25,12 +25,18 @@ public class MazeView extends View {
     private boolean[][] east;
     private boolean[][] south;
     private boolean[][] west;
+    private double size;
+    boolean done = false;
 
     private Paint paint = new Paint();
 
     public MazeView( Context aContext, AttributeSet aAttributeSet ) {
-        super( aContext );
+        super( aContext, aAttributeSet );
         initVars( aAttributeSet );
+        newMaze();
+    }
+
+    public void newMaze() {
         initMaze();
         generate( 1, 1 );
     }
@@ -164,4 +170,12 @@ public class MazeView extends View {
 
         return wallPresent;
     }
+
+    public boolean isLastCell( int x, int y ) {
+        if ( ( x >= width ) && y >= height ) {
+            return true;
+        }
+        return false;
+    }
+
 }

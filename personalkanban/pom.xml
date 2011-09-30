@@ -10,9 +10,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>countdown-tutorial</artifactId>
+    <artifactId>personal-kanban</artifactId>
     <packaging>apk</packaging>
-    <name>Countdown</name>
+    <name>Personal Kanban</name>
 
     <dependencies>
     </dependencies>

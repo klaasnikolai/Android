@@ -3,4 +3,8 @@
     <string name="app_name">Tilting Maze</string>
     <string name="menu_restart">Restart this game</string>
     <string name="menu_newgame">Start new game</string>
+    <string name="finished_message">Finished</string>
+    <string name="score_message">"Score was "</string>
+    <string name="hiscore_message">"New high score "</string>
+    <string name="seconds_message">" s"</string>
 </resources>
