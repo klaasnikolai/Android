@@ -3,24 +3,18 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
-        <groupId>org.suggs.android</groupId>
-        <artifactId>android-parent</artifactId>
-        <relativePath>../build</relativePath>
+        <groupId>org.suggs.android.sandbox</groupId>
+        <artifactId>tutorials-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.suggs.android.sandbox</groupId>
-    <artifactId>tutorials-parent</artifactId>
+    <artifactId>tutorials-layouts-parent</artifactId>
     <packaging>pom</packaging>
-    <name>Android Tutorials Parent</name>
+    <name>Android Layout Tutorials Parent</name>
 
     <modules>
-        <module>layouts</module>
-        <module>list</module>
-        <module>countdown</module>
-        <module>spiritlevel</module>
-        <module>maze</module>
     </modules>
 
 </project>

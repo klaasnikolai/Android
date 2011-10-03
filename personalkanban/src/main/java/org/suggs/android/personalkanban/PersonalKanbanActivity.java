@@ -3,8 +3,10 @@ package org.suggs.android.personalkanban;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class PersonalKanbanActivity extends Activity {
 
@@ -44,6 +46,20 @@ public class PersonalKanbanActivity extends Activity {
     private void createStory() {
         Intent intent = new Intent( this, StoryAddActivity.class );
         startActivityForResult( intent, STORY_ADD );
+    }
+
+    @Override
+    public void onCreateContextMenu( ContextMenu aContextMenu, View aView, ContextMenu.ContextMenuInfo aContextMenuInfo ) {
+        super.onCreateContextMenu( aContextMenu, aView, aContextMenuInfo);
+        aContextMenu.add( 0, DELETE_ID, 0, R.string.menu_delete );
+    }
+
+    @Override
+    public boolean onContextItemSelected( MenuItem aMenuItem ){
+        switch( aMenuItem.getItemId() ){
+            case DELETE_ID:
+
+        }
     }
 
 

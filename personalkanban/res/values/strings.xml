@@ -3,4 +3,5 @@
     <string name="app_name">Personal Kanban</string>
     <string name="story_name_label">Story headline:</string>
     <string name="menu_add">Add story</string>
+    <string name="menu_delete">Delete story</string>
 </resources>
