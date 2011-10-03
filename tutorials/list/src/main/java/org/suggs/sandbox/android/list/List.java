@@ -33,7 +33,6 @@ public class List extends ListActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate( Bundle savedInstanceState ) {
-        Log.i( "List", "onCreate" );
         super.onCreate( savedInstanceState );
         setContentView( R.layout.main );
         databaseAdapter = new ListDbAdapter( this );

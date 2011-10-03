@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PersonalKanbanActivity</string>
+    <string name="app_name">Personal Kanban</string>
+    <string name="story_name_label">Story headline:</string>
+    <string name="menu_add">Add story</string>
 </resources>
