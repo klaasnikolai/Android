@@ -9,12 +9,20 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.suggs.android.sandbox</groupId>
+    <groupId>org.suggs.android.sandbox.layouts</groupId>
     <artifactId>tutorials-layouts-parent</artifactId>
     <packaging>pom</packaging>
     <name>Android Layout Tutorials Parent</name>
 
     <modules>
+        <module>gallery</module>
+        <module>gridview</module>
+        <module>linear</module>
+        <module>listview</module>
+        <module>relative</module>
+        <module>spinner</module>
+        <module>tab</module>
+        <module>table</module>
     </modules>
 
 </project>
