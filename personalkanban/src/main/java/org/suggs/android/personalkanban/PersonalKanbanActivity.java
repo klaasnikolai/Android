@@ -60,6 +60,7 @@ public class PersonalKanbanActivity extends Activity {
             case DELETE_ID:
 
         }
+        return true;
     }
 
 
