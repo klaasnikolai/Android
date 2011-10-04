@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SpinnerActivity</string>
+    <string name="app_name">Spinner Layout Example</string>
     <string name="planet_prompt">Choose a planet</string>
     <string-array name="planets">
         <item>Mercury</item>
