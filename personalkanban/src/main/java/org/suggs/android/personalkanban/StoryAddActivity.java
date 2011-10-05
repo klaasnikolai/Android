@@ -15,15 +15,18 @@ import android.widget.EditText;
 
 public class StoryAddActivity extends Activity {
 
-    private EditText storyHeadline;
+    private EditText storyAsA;
+    private EditText storyINeed;
+    private EditText storySoThat;
 
     @Override
     public void onCreate( Bundle aSavedInstanceState ) {
         super.onCreate( aSavedInstanceState );
         setContentView( R.layout.new_story );
 
-
-        storyHeadline = ( EditText ) findViewById( R.id.newStoryHeadline );
+        storyAsA = ( EditText ) findViewById( R.id.storyAsA );
+        storyINeed = ( EditText ) findViewById( R.id.storyINeed );
+        storySoThat = ( EditText ) findViewById( R.id.storySoThat );
         Button okButton = ( Button ) findViewById( R.id.okButton );
         Button cancelButton = ( Button ) findViewById( R.id.cancelButton );
         okButton.setOnClickListener( new OkButtonClickListener() );
@@ -31,7 +34,7 @@ public class StoryAddActivity extends Activity {
     }
 
     private Story buildStory() {
-        Story story = new Story(storyHeadline.getText().toString());
+        Story story = new Story( storyAsA.getText().toString(), storyINeed.getText().toString(), storySoThat.getText().toString() );
         return story;
     }
 
@@ -39,11 +42,11 @@ public class StoryAddActivity extends Activity {
 
         @Override
         public void onClick( View aView ) {
-            Bundle bundle = new Bundle( );
-            Story story =  buildStory();
-            bundle.putSerializable("key", story);
-            Intent intent = new Intent( );
-            setResult( RESULT_OK, intent);
+            Bundle bundle = new Bundle();
+            Story story = buildStory();
+            bundle.putSerializable( "key", story );
+            Intent intent = new Intent();
+            setResult( RESULT_OK, intent );
             finish();
         }
     }

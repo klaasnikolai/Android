@@ -10,8 +10,13 @@ import java.io.Serializable;
 
 public class Story implements Serializable{
 
-    private String headline;
-    public Story( String aHeadline ) {
-        headline = aHeadline;
+    private String asA;
+    private String iNeed;
+    private String soThat;
+
+    public Story( String aAsA, String aINeed, String aSoThat ) {
+        asA = aAsA;
+        iNeed = aINeed;
+        soThat = aSoThat;
     }
 }

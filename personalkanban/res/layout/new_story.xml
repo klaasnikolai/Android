@@ -1,36 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:id="@+id/storyTable">
 
-    <TextView
-        android:id="@+id/story_label"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/story_name_label"/>
+        <TextView android:text="Story definition ..."/>
 
-    <EditText
-        android:id="@+id/newStoryHeadline"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/editbox_background"
-        android:layout_below="@id/story_label"/>
+        <View
+                android:layout_height="2dip"
+                android:background="#FF090909"/>
+
+        <TableRow>
+            <TextView android:text="As a ..."
+                      android:padding="3dip"/>
+            <EditText android:id="@+id/storyAsA"
+                      android:background="@android:drawable/editbox_background"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="I need ..."
+                      android:padding="3dip"/>
+            <EditText android:id="@+id/storyINeed"
+                      android:background="@android:drawable/editbox_background"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="So that ..."
+                      android:padding="3dip"/>
+            <EditText android:id="@+id/storySoThat"
+                      android:background="@android:drawable/editbox_background"/>
+        </TableRow>
+
+        <View
+                android:layout_height="2dip"
+                android:background="#FF090909"/>
+
+        <TextView android:text="I will know it is done when ..."/>
+
+        <Button
+            android:id="@+id/addAcceptanceCriteriaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dip"
+            android:text="Add"/>
+
+    </TableLayout>
+
 
     <Button
-        android:id="@+id/okButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/newStoryHeadline"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dip"
-        android:text="OK" />
+            android:id="@+id/okButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/storyTable"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dip"
+            android:text="OK"/>
 
     <Button
-		android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/okButton"
-        android:layout_alignTop="@id/okButton"
-        android:text="Cancel" />
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/okButton"
+            android:layout_alignTop="@id/okButton"
+            android:text="Cancel"/>
 
 </RelativeLayout>
+
+
