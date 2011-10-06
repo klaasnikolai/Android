@@ -2,11 +2,13 @@ package org.suggs.android.personalkanban;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class PersonalKanbanActivity extends Activity {
 
@@ -16,6 +18,9 @@ public class PersonalKanbanActivity extends Activity {
     private static final int DELETE_ID = ADD_ID + 1;
     private static final int STORY_ADD = 0;
 
+    private StoryDAO storyDao;
+    private Cursor dataCursor;
+
     /**
      * Called when the activity is first created.
      */
@@ -24,6 +29,8 @@ public class PersonalKanbanActivity extends Activity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.main );
 
+        storyDao = new StoryDAO( this );
+        storyDao.open();
     }
 
     @Override
@@ -48,20 +55,25 @@ public class PersonalKanbanActivity extends Activity {
         startActivityForResult( intent, STORY_ADD );
     }
 
+    public void onActivityResult( int aRequestCode, int aResultCode, Intent aIntent ) {
+        super.onActivityResult( aRequestCode, aResultCode, aIntent );
+        if ( aResultCode == RESULT_CANCELED ) {
+            Toast.makeText( this, "Cancelled ...", Toast.LENGTH_SHORT ).show();
+            return;
+        }
+        Bundle extras = aIntent.getExtras();
+        switch ( aRequestCode ) {
+            case STORY_ADD:
+                Story story = ( Story ) extras.getSerializable( StoryDAO.STORY_ITEM );
+                Toast.makeText( this, "Creating story: " + story.getHeadline(), Toast.LENGTH_SHORT ).show();
+                break;
+        }
+    }
+
     @Override
     public void onCreateContextMenu( ContextMenu aContextMenu, View aView, ContextMenu.ContextMenuInfo aContextMenuInfo ) {
-        super.onCreateContextMenu( aContextMenu, aView, aContextMenuInfo);
+        super.onCreateContextMenu( aContextMenu, aView, aContextMenuInfo );
         aContextMenu.add( 0, DELETE_ID, 0, R.string.menu_delete );
     }
-
-    @Override
-    public boolean onContextItemSelected( MenuItem aMenuItem ){
-        switch( aMenuItem.getItemId() ){
-            case DELETE_ID:
-
-        }
-        return true;
-    }
-
 
 }

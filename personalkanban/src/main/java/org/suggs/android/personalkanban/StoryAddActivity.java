@@ -44,8 +44,9 @@ public class StoryAddActivity extends Activity {
         public void onClick( View aView ) {
             Bundle bundle = new Bundle();
             Story story = buildStory();
-            bundle.putSerializable( "key", story );
+            bundle.putSerializable( StoryDAO.STORY_ITEM, story );
             Intent intent = new Intent();
+            intent.putExtras( bundle);
             setResult( RESULT_OK, intent );
             finish();
         }
