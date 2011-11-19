@@ -14,6 +14,8 @@ public class Story implements Serializable{
     private String iNeed;
     private String soThat;
     private String headline;
+    private String INeed;
+    private String state;
 
     public Story( String aAsA, String aINeed, String aSoThat ) {
         asA = aAsA;
@@ -23,5 +25,21 @@ public class Story implements Serializable{
 
     public String getHeadline() {
         return iNeed;
+    }
+
+    public String getAsA() {
+        return asA;
+    }
+
+    public String getINeed() {
+        return INeed;
+    }
+
+    public String getSoThat() {
+        return soThat;
+    }
+
+    public String getState() {
+        return state;
     }
 }

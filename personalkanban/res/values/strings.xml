@@ -5,5 +5,5 @@
     <string name="menu_add">Add story</string>
     <string name="menu_delete">Delete story</string>
     <string name="database_version">1</string>
-    <string name="database_name">PERSONALKANBAN_STORY_DB</string>
+    <string name="database_name">personalKanbanStory.db</string>
 </resources>

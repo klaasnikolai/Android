@@ -41,13 +41,16 @@
 
         <TextView android:text="I will know it is done when ..."/>
 
-        <Button
-            android:id="@+id/addAcceptanceCriteriaButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="10dip"
-            android:text="Add"/>
+        <TableRow>
+            <Button
+                    android:id="@+id/addAcceptanceCriteriaButton"
+                    android:layout_column="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dip"
+                    android:text="Add"/>
+        </TableRow>
 
     </TableLayout>
 

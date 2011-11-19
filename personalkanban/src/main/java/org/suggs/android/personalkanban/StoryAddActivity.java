@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.suggs.android.personalkanban.dao.StoryDAO;
+
 /**
  * Activity to manage the construction of new story items.
  * <p/>

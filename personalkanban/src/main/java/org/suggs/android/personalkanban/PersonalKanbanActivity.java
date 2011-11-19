@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import org.suggs.android.personalkanban.dao.StoryDAO;
+
 public class PersonalKanbanActivity extends Activity {
 
     private static final String TAG = PersonalKanbanActivity.class.getSimpleName();
@@ -66,6 +68,7 @@ public class PersonalKanbanActivity extends Activity {
             case STORY_ADD:
                 Story story = ( Story ) extras.getSerializable( StoryDAO.STORY_ITEM );
                 Toast.makeText( this, "Creating story: " + story.getHeadline(), Toast.LENGTH_SHORT ).show();
+                storyDao.persist( story );
                 break;
         }
     }
