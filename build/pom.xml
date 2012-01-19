@@ -46,7 +46,7 @@
                         <nativeLibrariesDirectory>${project.basedir}/src/main/native</nativeLibrariesDirectory>
                         <sdk>
                             <platform>8</platform>
-                            <path>/usr/apps/android-sdk-linux_x86</path>
+                            <path>/usr/apps/android-sdk-linux</path>
                         </sdk>
                         <deleteConflictingFiles>true</deleteConflictingFiles>
                         <undeployBeforeDeploy>true</undeployBeforeDeploy>
