@@ -9,7 +9,7 @@
     <name>Android Parent</name>
 
         <modules>
-            <module>../personalkanban</module>
+            <module>personalkanban</module>
         </modules>
 
     <build>
